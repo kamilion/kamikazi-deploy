@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "KAMIKAZI: Updating package lists..."
-apt update
+apt-get update
 echo "KAMIKAZI: Installing git."
 apt-get install -y --no-install-recommends git
 echo "KAMIKAZI: Configuring git."
@@ -13,8 +13,7 @@ echo "KAMIKAZI: Checking out kamikazi-deploy repository..."
 git clone https://kamilion@github.com/kamilion/kamikazi-deploy.git
 echo "KAMIKAZI: Attempting to rebuild ISO contents..."
 cd /home/git/kamikazi-deploy/resources/buildscripts/wily/
-apt full-upgrade -y
+apt-get full-upgrade -y
 ./00-build-clean-iso-from-source.sh
 echo "KAMIKAZI: Autobuild complete."
 exit 0
-
